@@ -11,7 +11,6 @@ License:	GPL
 Group:		Development/Perl
 Requires:	perl
 BuildRequires:	perl-devel
-Buildroot:	%{_tmppath}/%{name}-root
 URL:		http://search.cpan.org/dist/%{real_name}
 Source:		http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/%{real_name}-%{version}.tar.bz2
 BuildRequires:	gssapi-devel
