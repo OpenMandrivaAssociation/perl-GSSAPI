@@ -1,7 +1,7 @@
 %define real_name	GSSAPI
 %define name		perl-%{real_name}
 %define version		0.24
-%define release		%mkrel 1
+%define release		%mkrel 2
 
 Summary:	Perl extension providing access to the GSSAPIv2 library
 Name:		%{name}
