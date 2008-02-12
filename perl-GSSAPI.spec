@@ -30,8 +30,8 @@ are just skipping them at the moment)
 The API presented by this module is a mildly object oriented reinterpretation
 of the C API, where opaque C structures are Perl objects, but the style of
 function call has been left mostly untouched. As a result, most routines modify
-one or more of the parameters passed to them, reflecting the C call-by-reference
-(or call-by-value-return) semantics.
+one or more of the parameters passed to them, reflecting the C call-by-
+reference (or call-by-value-return) semantics.
 
 All users of this module are therefore strongly advised to localize all usage
 of these routines to minimize pain if and when the API changes.
