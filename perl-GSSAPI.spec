@@ -1,7 +1,7 @@
 %define real_name	GSSAPI
 %define name		perl-%{real_name}
-%define version		0.24
-%define release		%mkrel 3
+%define version		0.26
+%define release		%mkrel 1
 
 Summary:	Perl extension providing access to the GSSAPIv2 library
 Name:		%{name}
@@ -12,7 +12,7 @@ Group:		Development/Perl
 Requires:	perl
 BuildRequires:	perl-devel
 URL:		http://search.cpan.org/dist/%{real_name}
-Source:		http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/%{real_name}-%{version}.tar.bz2
+Source:		http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/%{real_name}-%{version}.tar.gz
 BuildRequires:	krb5-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
