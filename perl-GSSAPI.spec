@@ -1,20 +1,20 @@
-%define real_name	GSSAPI
-%define name		perl-%{real_name}
-%define version		0.26
-%define release		%mkrel 2
+%define upstream_name	 GSSAPI
+%define upstream_version 0.28
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	Perl extension providing access to the GSSAPIv2 library
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 License:	GPL
 Group:		Development/Perl
-Requires:	perl
-BuildRequires:	perl-devel
-URL:		http://search.cpan.org/dist/%{real_name}
-Source:		http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/%{real_name}-%{version}.tar.gz
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	krb5-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires:	perl-devel
+
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module gives access to the routines of the GSSAPI library, as described
@@ -36,14 +36,14 @@ All users of this module are therefore strongly advised to localize all usage
 of these routines to minimize pain if and when the API changes.
 
 %prep
-%setup -q -n %{real_name}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-%__make OPTIMIZE="$RPM_OPT_FLAGS"
+%make OPTIMIZE="$RPM_OPT_FLAGS"
 
 %check
-%__make test
+%make test
 
 %install
 rm -rf $RPM_BUILD_ROOT
