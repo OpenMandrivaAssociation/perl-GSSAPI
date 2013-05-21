@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    8
+Release:    9
 
 Summary:	Perl extension providing access to the GSSAPIv2 library
 License:	GPL
