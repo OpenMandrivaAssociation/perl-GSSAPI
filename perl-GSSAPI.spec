@@ -1,16 +1,14 @@
-%define upstream_name	 GSSAPI
-%define upstream_version 0.28
-
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    9
+%define modname	GSSAPI
+%define modver	0.28
 
 Summary:	Perl extension providing access to the GSSAPIv2 library
-License:	GPL
+Name:		perl-%{modname}
+Version:	%perl_convert_version %{modver}
+Release:	9
+License:	GPLv2
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/%{upstream_name}-%{upstream_version}.tar.gz
-
+Url:		http://search.cpan.org/dist/%{modname}
+Source0:	http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/%{modname}-%{modver}.tar.gz
 BuildRequires:	krb5-devel
 BuildRequires:	perl-devel
 
@@ -34,10 +32,10 @@ All users of this module are therefore strongly advised to localize all usage
 of these routines to minimize pain if and when the API changes.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -qn %{modname}-%{modver}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+%__perl Makefile.PL INSTALLDIRS=vendor
 %make OPTIMIZE="%{optflags}"
 
 %check
@@ -45,70 +43,10 @@ of these routines to minimize pain if and when the API changes.
 #make test
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 %files
 %doc Changes README
 %{perl_vendorlib}/*
-%{_mandir}/man?/*
-
-
-%changelog
-* Sun Jan 22 2012 Oden Eriksson <oeriksson@mandriva.com> 0.280.0-7mdv2012.0
-+ Revision: 765291
-- rebuilt for perl-5.14.2
-
-* Sat Jan 21 2012 Oden Eriksson <oeriksson@mandriva.com> 0.280.0-6
-+ Revision: 763830
-- rebuilt for perl-5.14.x
-
-* Sat Jan 21 2012 Oden Eriksson <oeriksson@mandriva.com> 0.280.0-5
-+ Revision: 763371
-- rebuild
-
-* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 0.280.0-4
-+ Revision: 667174
-- mass rebuild
-
-* Sun Aug 01 2010 Funda Wang <fwang@mandriva.org> 0.280.0-3mdv2011.0
-+ Revision: 564440
-- rebuild for perl 5.12.1
-
-* Tue Jul 20 2010 Jérôme Quelin <jquelin@mandriva.org> 0.280.0-2mdv2011.0
-+ Revision: 555879
-- rebuild for perl 5.12
-
-* Tue Jul 13 2010 Jérôme Quelin <jquelin@mandriva.org> 0.280.0-1mdv2011.0
-+ Revision: 552306
-- update to 0.28
-
-* Thu Sep 03 2009 Christophe Fergeau <cfergeau@mandriva.com> 0.26-2mdv2010.1
-+ Revision: 426446
-- rebuild
-
-* Sun Jul 06 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.26-1mdv2009.0
-+ Revision: 232124
-- new version
-
-* Tue Jun 17 2008 Thierry Vignaud <tv@mandriva.org> 0.24-3mdv2009.0
-+ Revision: 223778
-- rebuild
-
-* Thu Mar 06 2008 Oden Eriksson <oeriksson@mandriva.com> 0.24-2mdv2008.1
-+ Revision: 180650
-- fix deps
-
-  + Thierry Vignaud <tv@mandriva.org>
-    - fix description-line-too-long
-    - rebuild
-    - kill re-definition of %%buildroot on Pixel's request
-
-  + Olivier Blin <blino@mandriva.org>
-    - restore BuildRoot
-
-* Sat May 05 2007 Olivier Thauvin <nanardon@mandriva.org> 0.24-1mdv2008.0
-+ Revision: 23368
-- 0.24
-- Create perl-GSSAPI
+%{_mandir}/man3/*
 
