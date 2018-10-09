@@ -48,6 +48,8 @@ of these routines to minimize pain if and when the API changes.
 
 %files
 %doc Changes README
-%{perl_vendorlib}/*
+# Looks weird with new perl?
+%{_libdir}/perl5/vendor_perl/*
+#{perl_vendorlib}/*
 %{_mandir}/man3/*
 
