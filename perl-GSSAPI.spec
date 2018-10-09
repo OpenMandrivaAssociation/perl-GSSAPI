@@ -11,6 +11,7 @@ Url:		http://search.cpan.org/dist/%{modname}
 Source0:	http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/%{modname}-%{modver}.tar.gz
 BuildRequires:	krb5-devel
 BuildRequires:	perl-devel
+BuildRequires:	glibc-devel
 BuildRequires:	pkgconfig(com_err)
 
 %description
