@@ -4,7 +4,7 @@
 Summary:	Perl extension providing access to the GSSAPIv2 library
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	22
+Release:	23
 License:	GPLv2
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -53,4 +53,3 @@ of these routines to minimize pain if and when the API changes.
 %{_libdir}/perl5/vendor_perl/*
 #{perl_vendorlib}/*
 %{_mandir}/man3/*
-
