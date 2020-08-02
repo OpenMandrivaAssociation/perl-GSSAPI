@@ -4,7 +4,7 @@
 Summary:	Perl extension providing access to the GSSAPIv2 library
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	23
+Release:	24
 License:	GPLv2
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -38,14 +38,14 @@ of these routines to minimize pain if and when the API changes.
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
-%make OPTIMIZE="%{optflags}"
+%make_build OPTIMIZE="%{optflags}"
 
 %check
 # Looks like latest krb5 is not fully supported :-/
 #make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc Changes README
