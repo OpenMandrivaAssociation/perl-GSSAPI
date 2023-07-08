@@ -1,14 +1,13 @@
 %define modname	GSSAPI
-%define modver	0.28
 
 Summary:	Perl extension providing access to the GSSAPIv2 library
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	26
+Version:	0.28
+Release:	1
 License:	GPLv2
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/%{modname}-%{modver}.tar.gz
+Source0:	http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/%{modname}-%{version}.tar.gz
 BuildRequires:	krb5-devel
 BuildRequires:	perl-devel
 BuildRequires:	glibc-devel
@@ -34,7 +33,7 @@ All users of this module are therefore strongly advised to localize all usage
 of these routines to minimize pain if and when the API changes.
 
 %prep
-%setup -qn %{modname}-%{modver}
+%setup -qn %{modname}-%{version}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
