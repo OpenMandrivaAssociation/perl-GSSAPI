@@ -3,14 +3,13 @@
 Summary:	Perl extension providing access to the GSSAPIv2 library
 Name:		perl-%{modname}
 Version:	0.28
-Release:	1
+Release:	2
 License:	GPLv2
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
 Source0:	http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/%{modname}-%{version}.tar.gz
-BuildRequires:	krb5-devel
+BuildRequires:	pkgconfig(krb5)
 BuildRequires:	perl-devel
-BuildRequires:	glibc-devel
 BuildRequires:	pkgconfig(com_err)
 
 %description
@@ -33,13 +32,13 @@ All users of this module are therefore strongly advised to localize all usage
 of these routines to minimize pain if and when the API changes.
 
 %prep
-%setup -qn %{modname}-%{version}
+%autosetup -p1 -n %{modname}-%{version}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
 %make_build OPTIMIZE="%{optflags}"
 
-%check
+#check
 # Looks like latest krb5 is not fully supported :-/
 #make test
 
@@ -51,4 +50,4 @@ of these routines to minimize pain if and when the API changes.
 # Looks weird with new perl?
 %{_libdir}/perl5/vendor_perl/*
 #{perl_vendorlib}/*
-%{_mandir}/man3/*
+%doc %{_mandir}/man3/*
