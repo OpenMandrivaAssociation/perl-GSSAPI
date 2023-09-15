@@ -1,9 +1,9 @@
-%define modname	GSSAPI
+%define modname GSSAPI
 
 Summary:	Perl extension providing access to the GSSAPIv2 library
 Name:		perl-%{modname}
 Version:	0.28
-Release:	2
+Release:	3
 License:	GPLv2
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -11,6 +11,11 @@ Source0:	http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/%{modname}-%{version}.
 BuildRequires:	pkgconfig(krb5)
 BuildRequires:	perl-devel
 BuildRequires:	pkgconfig(com_err)
+# (tpg) fix upgrade
+Provides:	perl-GSSAPI = 0.280.0-25
+Provides:	perl-GSSAPI = 0.280.0
+Provides:	perl(GSSAPI) = 0.280.0-25
+Provides:	perl(GSSAPI) = 0.280.0
 
 %description
 This module gives access to the routines of the GSSAPI library, as described
