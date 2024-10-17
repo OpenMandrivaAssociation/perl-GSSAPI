@@ -6,7 +6,7 @@ Version:	0.28
 Release:	4
 License:	GPLv2
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{modname}
+Url:		https://search.cpan.org/dist/%{modname}
 Source0:	http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/%{modname}-%{version}.tar.gz
 BuildRequires:	pkgconfig(krb5)
 BuildRequires:	perl-devel
