@@ -8,6 +8,7 @@ License:	GPLv2
 Group:		Development/Perl
 Url:		https://search.cpan.org/dist/%{modname}
 Source0:	http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/%{modname}-%{version}.tar.gz
+BuildRequires:	make
 BuildRequires:	pkgconfig(krb5)
 BuildRequires:	perl-devel
 BuildRequires:	pkgconfig(com_err)
